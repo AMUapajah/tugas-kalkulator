@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kalkulator</title>
+  </head>
+  <body>
+    Angka 1: <input id="angka1" /><br /><br />
+    Angka 2: <input id="angka2" /><br /><br />
+
+    <button onclick="tambah()">+</button>
+    <button onclick="kurang()">-</button>
+    <button onclick="kali()">x</button>
+    <button onclick="bagi()">:</button>
+
+    <p id="hasil"></p>
+
+    <script>
+      function tambah() {
+        let a = parseFloat(document.getElementById("angka1").value);
+        let b = parseFloat(document.getElementById("angka2").value);
+        if (isNaN(a) || isNaN(b)) {
+          document.getElementById("hasil").innerHTML = "Error: bukan angka";
+        } else {
+          document.getElementById("hasil").innerHTML = "Hasil: " + (a + b);
+        }
+      }
+
+      function kurang() {
+        let a = parseFloat(document.getElementById("angka1").value);
+        let b = parseFloat(document.getElementById("angka2").value);
+        if (isNaN(a) || isNaN(b)) {
+          document.getElementById("hasil").innerHTML = "Error: bukan angka";
+        } else {
+          document.getElementById("hasil").innerHTML = "Hasil: " + (a - b);
+        }
+      }
+
+      function kali() {
+        let a = parseFloat(document.getElementById("angka1").value);
+        let b = parseFloat(document.getElementById("angka2").value);
+        if (isNaN(a) || isNaN(b)) {
+          document.getElementById("hasil").innerHTML = "Error: bukan angka";
+        } else {
+          document.getElementById("hasil").innerHTML = "Hasil: " + a * b;
+        }
+      }
+
+      function bagi() {
+        let a = parseFloat(document.getElementById("angka1").value);
+        let b = parseFloat(document.getElementById("angka2").value);
+        if (isNaN(a) || isNaN(b)) {
+          document.getElementById("hasil").innerHTML = "Error: bukan angka";
+        } else if (b === 0) {
+          document.getElementById("hasil").innerHTML =
+            "Error: tidak bisa bagi 0";
+        } else {
+          document.getElementById("hasil").innerHTML = "Hasil: " + a / b;
+        }
+      }
+    </script>
+  </body>
+</html>
